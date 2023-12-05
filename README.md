@@ -1,3 +1,10 @@
+[Introduction](#introduction)  
+[Analysis](aAnalysis)  
+[Results](#results)  
+[Data Gathering and Preperation](#data-gathering-and-preperation)  
+[Conclusion](#conclusion)  
+
+
 ### Introduction
 
 Self driving and navigation is and has been a goal for many individuals and companies for quite a few years now. From autonomous cars to robots that can navigate our world there are so many tasks that have consumed too many man hours. The fun of this challenge is it is still unsolved. Autonomous robots path planning can still be improved, self driving cars are only recently sharing the roads with us in very limited fashions. Many of the limitations have been in hardware. There are still many hardware limitations but as hardware improves we can push our algorithms and models.
@@ -14,7 +21,7 @@ Sensor mixing and processing is still an ongoing challenge for anyone attempting
 Each sensor can be better and worse at different tasks. A camera can be good at detecting signs, signals, people, other cars, etc. A lidar is very good at detecting depth over all 360 degrees. There are stereo cameras for detecting depth in a cone in front of a sensor as well. These stereo cameras are not as good as a lidar but they are much cheaper. 
 This project was an exploration of trying to create a simple neural network to drive a car in the game BeamNG.drive. BeamNG.drive started out as more of a crashing simulator but evolved into a fairly good driving and racing simulator. As stated before there are many challenges in creating the full system for this sort of problem.
 
-### Data gathering and prep
+### Data Gathering and Preperation
 
 Data for this project was all generated manually. Originally using a game controller was the plan. There are very few libraries for capturing and playing back gamepad inputs. Capturing the gamepad inputs was only successful for the joystick of the controller. The inputs from the controller were sometimes very good but at times the data was a bit chaotic. The intent was to get input data that looked like an inverted v, as seen in the graph. Since there was doubt in the data the best option was to record a small sample of data and play that data back. Data playback was where using a gamepad fell apart. Upon searching there was only one ancient python library and drivers that could do this. Upon testing the library and drivers it became apparent that this method would not work. The drivers were very unreliable and they broke gamepad support on the system being used for data gathering.
 ![Attempted trigger input](/assets/trigger_graph.png)
