@@ -1,5 +1,5 @@
 [Introduction](#introduction)  
-[Analysis](aAnalysis)  
+[Analysis](analysis)  
 [Results](#results)  
 [Data Gathering and Preperation](#data-gathering-and-preperation)  
 [Conclusion](#conclusion)  
