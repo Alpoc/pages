@@ -113,7 +113,7 @@ Test accuracy: 79.30%
 Test accuracy: 100.00%  
 total accuracy: 0.787109375
 
-Greyscale was chosen in hopes to lower inference time. This idea turned out to be wrong. To lower inference time either better hardware needs to be chosen or the dimensionality of the model needs to be reduced with pruning or dropping weights.Inference time lowered marginally to 0.1185ms. What reducing the image from RGB to grayscale did do was lower the amount of training time required. Under the otherwise same settings one batch took eight seconds for RGB vs one second for greyscale. Our first run with RGB was able to do eight epochs in 3 hours. Our second model was ran for 32 epochs. In game the model did much better. It gets close to being able to make a turn. The model turns too soon but if we help it out by getting it to the turn manually it almost makes the complete turn.
+Greyscale was chosen in hopes to lower inference time. This idea turned out to be wrong. To lower inference time either better hardware needs to be chosen or the dimensionality of the model needs to be reduced with pruning or dropping weights.Inference time lowered marginally to 0.1185 seconds. What reducing the image from RGB to grayscale did do was lower the amount of training time required. Under the otherwise same settings one batch took eight seconds for RGB vs one second for greyscale. Our first run with RGB was able to do eight epochs in 3 hours. Our second model was ran for 32 epochs. In game the model did much better. It gets close to being able to make a turn. The model turns too soon but if we help it out by getting it to the turn manually it almost makes the complete turn.
 
 The CNN with LSTM summary is:  
 Model: "sequential"  
@@ -167,6 +167,8 @@ Time series information is also important, otherwise the model may try and learn
 
 More epochs and more data are needed. The models struggled with sections of the dataset. The accuracy between epochs would be high for a majority of the time and low for the others. It would be good to save off and analize the bad sections of data so that more targeted training data could be generated. Since it takes a long time to generate data knowing the shortcomings of the dataset would allow time to be better spent. 
 Software compatibility is important. Windows is not compatible with newer versions of tensorflow GPU. Only being able to run inference on the CPU was detrimental to understanding if the model was working well. Inference took 92ms to run on the CPU. At 92ms the model is running at 11fps. Going from color to grayscale did not allow for faster inference. The model would need to be simplified or pruned to allow for faster inference. What would be best is running inference of the GPU or other more capable hardware. AI accelerators are becoming more available being built into CPUs and systems on a chip, SoCs.
+
+For future work getting ConvLSTM2D working would be great. ConvLSTM2D convolves at each timestep in the LSTM. The benefit of ConvLSTM2D is that the sequence length can be specified. The problem with a normal LSTM is that it does not know when a sequence starts and end so each batch is treated as a sequence. The race data was created by running batches of laps. The batches of laps are the sequences lenghts that could be fed to the model. Breaking the data up into single laps and multiples of laps to explore if the model learns better on one or the other. There are so many models and types to explore. This project did not even scratch the surface of what tensorflow and keras has to offer.
 
 
 
