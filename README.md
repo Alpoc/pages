@@ -113,7 +113,9 @@ Test accuracy: 79.30%
 Test accuracy: 100.00%  
 total accuracy: 0.787109375
 
-Greyscale was chosen in hopes to lower inference time. This idea turned out to be wrong. To lower inference time either better hardware needs to be chosen or the dimensionality of the model needs to be reduced with pruning or dropping weights.Inference time lowered marginally to 0.1185 seconds. What reducing the image from RGB to grayscale did do was lower the amount of training time required. Under the otherwise same settings one batch took eight seconds for RGB vs one second for greyscale. Our first run with RGB was able to do eight epochs in 3 hours. Our second model was ran for 32 epochs. In game the model did much better. It gets close to being able to make a turn. The model turns too soon but if we help it out by getting it to the turn manually it almost makes the complete turn.
+![Confusion Matrix](/assets/heatmap.png)
+
+Greyscale was chosen in hopes to lower inference time. This idea turned out to be wrong. To lower inference time either better hardware needs to be chosen or the dimensionality of the model needs to be reduced with pruning or dropping weights.Inference time lowered marginally to 0.1185 seconds. What reducing the image from RGB to grayscale did do was lower the amount of training time required. Under the otherwise same settings one batch took eight seconds for RGB vs one second for greyscale. Our first run with RGB was able to do eight epochs in 3 hours. Our second model was ran for 32 epochs. In game the model did much better. It gets close to being able to make a turn. The model turns too soon but if we help it out by getting it to the turn manually it almost makes the complete turn. Running the model for another 50 epochs on top of the 100 epochs the model only got worse. The accuracy went down and the bias for only going straigt got even stronger. 
 
 The CNN with LSTM summary is:  
 Model: "sequential"  
