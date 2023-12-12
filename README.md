@@ -176,3 +176,14 @@ For future work getting ConvLSTM2D working as well as creating much more data is
 
 
 
+
+
+
+sources
+
+Defense Advanced Research Projects Agency. (n.d.). Grand Challenge 2004. DARPA RSS. https://www.darpa.mil/about-us/timeline/-grand-challenge-for-autonomous-vehicles
+
+Dave Steinkrau, Patrice Y. Simard, and Ian Buck. 2005. Using GPUs for Machine Learning Algorithms. In Proceedings of the Eighth International Conference on Document Analysis and Recognition (ICDAR '05). IEEE Computer Society, USA, 1115–1119. https://doi.org/10.1109/ICDAR.2005.251
+
+  
+
